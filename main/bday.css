@@ -1,0 +1,141 @@
+/* Overall Body Styling */
+body {
+    font-family: 'Poppins', Arial, sans-serif;
+    background: linear-gradient(135deg, rgb(23, 1, 45), rgb(45, 0, 89));
+    color: white;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    animation: gradientShift 10s infinite alternate;
+}
+
+@keyframes gradientShift {
+    0% {
+        background: linear-gradient(135deg, rgb(23, 1, 45), rgb(45, 0, 89));
+    }
+    100% {
+        background: linear-gradient(135deg, rgb(45, 0, 89), rgb(23, 1, 45));
+    }
+}
+
+/* Center Container */
+.center-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* Intro Button Styling */
+.intro-button {
+    font-size: 20px;
+    font-family: 'Poppins', Arial, sans-serif;
+    border-radius: 20px;
+    border: none;
+    background-color: rgb(78, 216, 154);
+    color: white;
+    height: 50px;
+    width: 250px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.intro-button:hover {
+    transform: scale(1.1);
+    background-color: rgb(56, 183, 122);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.intro-button:active {
+    transform: scale(1.05);
+    box-shadow: none;
+}
+
+/* Message Container */
+.message-container {
+    margin-top: 30px;
+    padding: 10px;
+    font-size: 22px;
+    color: white;
+    white-space: nowrap;
+    display: inline-block;
+    animation: glow 1s infinite alternate;
+}
+
+@keyframes glow {
+    0% {
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    }
+    100% {
+        text-shadow: 0 0 20px rgba(255, 255, 255, 1);
+    }
+}
+
+/* Message Span Fade-in Animation */
+.message-container span {
+    display: inline;
+    opacity: 0;
+    animation: fadeIn 0.3s forwards;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Action Button Styling */
+.action-button {
+    display: block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #2f9532;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.3s;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.6s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.action-button:hover {
+    transform: scale(1.1);
+    background-color: #45a049;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Media Query for Smaller Screens */
+@media (max-width: 600px) {
+    .intro-button, .action-button {
+        font-size: 16px;
+        width: 200px;
+        height: 40px;
+    }
+
+    .message-container {
+        font-size: 18px;
+    }
+}
